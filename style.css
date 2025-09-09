@@ -1,0 +1,45 @@
+:root {
+  --outline-colour: #000;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.border-text {
+  color: white;
+  background-color: white;
+  text-shadow: 4px 4px 8px var(--outline-colour),
+    -4px 4px 8px var(--outline-colour), -4px -4px 8px var(--outline-colour),
+    4px -4px 8px var(--outline-colour);
+}
+
+#timer-wrapper,
+#setup-text {
+  position: fixed;
+  right: 0px;
+}
+
+#timer-wrapper {
+  top: 0px;
+}
+
+#setup-text {
+  bottom: 0px;
+}
+
+#divider {
+  font-size: 8.8em;
+}
+
+#textToShow {
+  font-size: 128px;
+}
+
+#hours,
+#minutes,
+#seconds {
+  font-size: 9em;
+}
