@@ -10,7 +10,6 @@ body {
 
 .border-text {
   color: white;
-  background-color: white;
   text-shadow: 4px 4px 8px var(--outline-colour),
     -4px 4px 8px var(--outline-colour), -4px -4px 8px var(--outline-colour),
     4px -4px 8px var(--outline-colour);
