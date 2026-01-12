@@ -25,5 +25,28 @@
         <span id="textToShow">STARTING SOON™</span>
       </p>
     </div>
+
+
+    <div id="filterWrapper">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="outlineEffect" color-interpolation-filters="sRGB">
+          <feConvolveMatrix in="SourceAlpha" result="OutlineAlpha" divisor="1" order="1,1" kernelMatrix="1"/>
+          <feFlood flood-color="#000" result="OutlineColor" />
+          <feComposite in="OutlineColor" in2="OutlineAlpha" operator="in" result="Outline" />
+
+          <feMerge>
+            <feMergeNode in="Outline"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
+        <filter id="shadowEffect" color-interpolation-filters="sRGB">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000"/>
+        </filter>
+        <filter id="blankEffect"></filter>
+      </svg>
+    </div>
+
+    <script defer type="text/javascript" src="outline.js"></script>
   </body>
 </html>

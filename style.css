@@ -1,5 +1,8 @@
 :root {
-  --outline-colour: #000;
+	--shadowStuff: url(#shadowEffect);
+	--outlineStuff: url(#outlineEffect);
+
+  --effect-filters: var(--outlineStuff) var(--shadowStuff);
 }
 
 body {
@@ -10,9 +13,10 @@ body {
 
 .border-text {
   color: white;
-  text-shadow: 5px 5px 8px var(--outline-colour),
+  filter: var(--effect-filters);
+  /* text-shadow: 5px 5px 8px var(--outline-colour),
     -5px 5px 8px var(--outline-colour), -5px -5px 8px var(--outline-colour),
-    5px -5px 8px var(--outline-colour);
+    5px -5px 8px var(--outline-colour); */
 }
 
 #timer-wrapper,
