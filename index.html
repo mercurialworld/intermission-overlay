@@ -11,22 +11,30 @@
   </head>
 
   <body>
-    <div id="timer-wrapper" class="border-text">
-      <p>
-        <span id="hoursDisplay">
-          <span id="hours">00</span><span id="divider">:</span>
-        </span>
-        <span id="minutes">05</span><span id="divider">:</span>
-        <span id="seconds">00</span>
-      </p>
-    </div>
-    <div id="setup-text" class="border-text">
-      <p>
-        <span id="textToShow">STARTING SOON™</span>
-      </p>
+    <div id="overlay-thing">
+      <div id="left-bar">
+          <div id="bar-icon" class="border-text">
+            <img id="iconThing" src="static/images/setup.svg">
+          </div>
+          <div id="setup-text" class="border-text">
+            <p id="textToShow">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> 
+            </p>
+          </div>
+      </div>
+      
+      <div id="timer-wrapper" class="border-text">
+        <p>
+          <span id="hoursDisplay">
+            <span id="hours">00</span><span id="divider">:</span>
+          </span>
+          <span id="minutes">05</span><span id="divider">:</span>
+          <span id="seconds">00</span>
+        </p>
+      </div>
     </div>
 
-
+    <iframe src="https://theblackparrot.me/overlays/dev/cover-art-colors" style="display: none;" id="iframe"></iframe>
     <div id="filterWrapper">
       <svg xmlns="http://www.w3.org/2000/svg">
         <filter id="outlineEffect" color-interpolation-filters="sRGB">

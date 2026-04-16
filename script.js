@@ -34,22 +34,42 @@ function DisplayTime(durationList) {
   }
 }
 
+function SetFlavourText(text) {
+  let barText = document.getElementById("textToShow");
+  barText.textContent = text;
+}
+
+function SetIcon(intermissionType) {
+  let icon = document.getElementById("iconThing");
+  icon.src = `static/images/${intermissionType}.svg`;
+}
+
+function SetupStuff(intermissionType) {
+  SetIcon(intermissionType);
+
+  switch (intermissionType) {
+    case "starting":
+      SetFlavourText("I'm setting up stream! Ads will play at the beginning of stream to stop prerolls.")
+      return 650;
+    
+    case "break":
+      SetFlavourText("I'm taking a break and running ads! Make sure to take care of yourself; stretch and hydrate!")
+      return 300;
+    
+    case "brb":
+      SetFlavourText("Something happened! We'll be right back!")
+      return -1;
+    default:
+      break;
+  }
+}
+
 function Initialize() {
   // params from URL
   const queryParams = new URLSearchParams(location.search);
+  const intermissionType = queryParams.get("type") ?? "starting";
 
-  // get text to put in bottom right, or "starting soon" if none
-  const text = queryParams.get("text") ?? "STARTING SOON™";
-  const textDiv = document.getElementById("textToShow");
-  textDiv.textContent = text;
-
-  // get font size, or default to 128px
-  const fontSize = queryParams.get("textSize") ?? "128px";
-  textDiv.style.fontSize = fontSize;
-
-  // get time. if none, default to 10min
-  let timer = queryParams.get("time") ?? 600;
-  console.log(`counting down ${timer} seconds...`);
+  let timer = SetupStuff(intermissionType);
 
   DisplayTime(FormatTime(timer));
 

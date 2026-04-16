@@ -1,3 +1,19 @@
+/* maple-mono-latin-700-normal */
+@font-face {
+  font-family: 'Maple Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-700-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-700-normal.woff) format('woff');
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 :root {
 	--shadowStuff: url(#shadowEffect);
 	--outlineStuff: url(#outlineEffect);
@@ -6,7 +22,7 @@
 }
 
 body {
-  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-family: "irohamaru mikami", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -19,31 +35,67 @@ body {
     5px -5px 8px var(--outline-colour); */
 }
 
-#timer-wrapper,
-#setup-text {
-  position: fixed;
-  right: 0px;
-  padding-right: 1.5em;
+.fadeout-horizontal {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5rem,
+    black calc(100% - 5rem),
+    transparent
+  );
+}
+
+#overlay-thing {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+#left-bar {
+  display: flex;
+  width: 1530px;
+  height: 83px;
+  gap: 1em;
+  align-items: center;
+}
+
+#bar-icon {
+  padding: 1em;
+}
+
+#bar-icon img {
+  width: auto;
+  height: 70px;
 }
 
 #timer-wrapper {
+  font-family: "Maple Mono", monospace;
   top: 0px;
+  padding-right: 1.5em;
 }
 
 #setup-text {
   bottom: 0px;
+  overflow: clip;
+  width: 1400px;
 }
 
 #divider {
-  font-size: 8.8em;
+  font-size: 5em;
 }
 
 #textToShow {
-  font-size: 128px;
+  display: flex;
+  /* padding-left: 4.8rem; */
+  /* gap: 4.8rem; */
+  font-size: 2em;
+  width: max-content;
+  /* animation: marquee-move-text var(--speed, 20s) linear infinite */
+    /* var(--direction, forwards); */
 }
 
 #hours,
 #minutes,
 #seconds {
-  font-size: 9em;
+  font-size: 7em;
 }
